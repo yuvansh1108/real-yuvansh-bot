@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>YJ Code Maker</title>
+  <link rel="stylesheet" href="code-maker.css">
+</head>
+<body>
+  <header class="topbar">
+    <div>
+      <div class="brand">YJ Code Maker</div>
+      <div class="subtitle">Build, edit and send code to connected devices</div>
+    </div>
+    <div class="actions">
+      <button id="connectSerial">Connect USB / Serial</button>
+      <button id="connectBluetooth">Connect Bluetooth</button>
+      <button id="runCode" class="primary">Run</button>
+    </div>
+  </header>
+
+  <main class="layout">
+    <aside class="sidebar">
+      <h2>Device</h2>
+      <select id="deviceType">
+        <option value="microbit">micro:bit</option>
+        <option value="serial">USB Serial device</option>
+        <option value="bluetooth">Bluetooth device</option>
+      </select>
+      <div id="status" class="status">Not connected</div>
+
+      <h2>Language</h2>
+      <select id="language">
+        <option value="javascript">JavaScript / TypeScript</option>
+        <option value="python">Python</option>
+      </select>
+
+      <h2>Quick actions</h2>
+      <button id="insertStarter">Insert micro:bit starter</button>
+      <button id="clearEditor">Clear editor</button>
+    </aside>
+
+    <section class="editor-panel">
+      <div class="panel-title">Code</div>
+      <textarea id="editor" spellcheck="false">input.onButtonPressed(Button.A, function () {
+    basic.showString("YJ")
+})
+
+input.onButtonPressed(Button.B, function () {
+    basic.showIcon(IconNames.Heart)
+})</textarea>
+      <div class="console-title">Console</div>
+      <pre id="console">YJ Code Maker ready.</pre>
+    </section>
+  </main>
+
+  <script src="code-maker.js"></script>
+</body>
+</html>
